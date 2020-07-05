@@ -1,0 +1,26 @@
+
+.bdHeader {
+  background-image: url("src/assets/img/background/bgTop1.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position-y: top;
+
+  width: 100%;
+  padding: 50px 0 30px;
+  text-align: center;
+
+  div {
+
+    .writing {
+      width: 130px;
+      display: inline-block;
+    }
+    .faceGif {
+      width: 100px;
+      display: inline-block;
+    }
+    .menu {
+      margin-top: 20px;
+    }
+  }
+}
