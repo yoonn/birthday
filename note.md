@@ -22,3 +22,10 @@
 
 ## 배포
 ng deploy --base-href=https://yoonn.github.io/birthday/
+
+## webcam
+npm install --save ngx-webcam
+npmjs.com/package/ngx-webcam
+
+--save는 package.json에 자동 포함되게 하는 기능이었지만 요즘은 그냥 install해도 자동 추가됨
+

@@ -1,0 +1,30 @@
+
+.camDiv {
+  width: fit-content;
+  margin: 0 auto;
+
+  img {
+    width: 80%;
+    margin: 0 10%;
+  }
+}
+
+.btnDiv {
+  text-align: center;
+  margin: 20px 0 50px;
+
+  button {
+    background: none;
+    border: none;
+    img {
+      width: 30px;
+    }
+  }
+}
+
+.copyright{
+  font-size: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
