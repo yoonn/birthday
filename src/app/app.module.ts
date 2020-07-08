@@ -10,6 +10,7 @@ import { QuestionComponent } from './common/question/question.component';
 import {FormsModule} from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { FooterComponent } from './common/footer/footer.component';
+import { SelectComponent } from './select/select.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './common/footer/footer.component';
     SurveyComponent,
     HeaderComponent,
     QuestionComponent,
-    FooterComponent
+    FooterComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,

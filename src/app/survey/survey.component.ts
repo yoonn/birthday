@@ -22,7 +22,15 @@ export class SurveyComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private cookieService: CookieService, private router: Router) {
 
-    this.guest = route.snapshot.params[this.paramName];
+    const param = route.snapshot.params[this.paramName];
+    if (this.isEmptyString(param)) {
+      this.guest = 'none';
+    } else {
+      this.guest = param;
+    }
+
+    console.log(this.guest);
+
     this.setHost();
     this.url = 'complete/' + this.guest;
 
@@ -47,13 +55,13 @@ export class SurveyComponent implements OnInit {
   }
 
   public valid() {
-    if (this.q1 === 'undefined' || this.q1 === '' || this.q1 == null || this.q1 === 'null') {
+    if (this.isEmptyString(this.q1)) {
       alert('케익을 골라주');
       return false;
-    } else if (this.q2 === 'undefined' || this.q2 === '' || this.q2 == null || this.q2 === 'null') {
+    } else if (this.isEmptyString(this.q2)) {
       alert('선물을 골라주');
       return false;
-    } else if (this.q3 === 'undefined' || this.q3 === '' || this.q3 == null || this.q3 === 'null') {
+    } else if (this.isEmptyString(this.q3)) {
       alert('요일을 골라주');
       return false;
     }
@@ -65,17 +73,19 @@ export class SurveyComponent implements OnInit {
       return false;
     }
 
-    // const bdData = {
-    //   q1: this.q1,
-    //   q2: this.q2,
-    //   q3: this.q3
-    // };
-
     const bdData = this.q1.concat(this.q2).concat(this.q3);
 
     // console.log('bdData', bdData);
     this.cookieService.set('bdData', bdData);
     this.router.navigate([this.url]);
+  }
+
+  /*
+  문자열이 빈 문자열인지 검사
+  비어있다면 true 반환, 안비어있으면 false 반환
+   */
+  public isEmptyString(str) {
+    return str === 'undefined' || str === undefined || str === '' || str == null || str === 'null';
   }
 
 }
