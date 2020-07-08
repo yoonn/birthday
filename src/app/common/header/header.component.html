@@ -1,13 +1,13 @@
 <div class="bdHeader">
   <div>
-    <img class="writing" src="assets/img/header/happybd.png">
+    <img class="writing" src="assets/img/header/happybd.png" alt="hbd">
   </div>
   <div>
-    <img class="faceGif" [src]="gifSrc">
+    <img class="faceGif" [src]="gifSrc" alt="faceGif" *ngIf="guest != 'none'"/>
   </div>
-<!--  <div class="menu">-->
-<!--    <btn type="button">qq</btn>-->
-<!--    <btn type="button">cam</btn>-->
-<!--    <btn type="button">song</btn>-->
-<!--  </div>-->
+  <div class="menu">
+    <button type="button" (click)="goQuestion()">계획</button>
+    <button type="button" (click)="goCamera()">촬영</button>
+    <button type="button" (click)="goSong()">노래</button>
+  </div>
 </div>

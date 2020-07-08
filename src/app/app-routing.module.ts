@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SurveyComponent } from './survey/survey.component';
 import { CompleteComponent } from './complete/complete.component';
+import { SelectComponent } from './select/select.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'survey', pathMatch: 'full' },
+  { path: '', redirectTo: 'select', pathMatch: 'full' },
+  { path: 'select', component: SelectComponent},
   { path: 'survey/:guest', component: SurveyComponent},
   { path: 'complete/:guest', component: CompleteComponent}
 ];

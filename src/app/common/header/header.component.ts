@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,12 +13,18 @@ export class HeaderComponent implements OnInit {
   public guest: string;
   public gifSrc: string;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
 
     this.guest = route.snapshot.params[this.paramName];
     this.setSrc();
 
-    console.log('guest', this.guest, 'src', this.gifSrc);
+    const param = route.snapshot.params[this.paramName];
+    if (param === undefined || param === '') {
+      this.guest = 'none';
+    } else {
+      this.guest = param;
+    }
+
   }
 
   ngOnInit(): void {
@@ -32,6 +38,19 @@ export class HeaderComponent implements OnInit {
     } else {
       console.log('guest', this.guest);
     }
+  }
+
+  public goQuestion(){
+    const url = 'survey/' + this.guest;
+    this.router.navigate([url]);
+  }
+
+  public goCamera(){
+    this.router.navigate([]);
+  }
+
+  public goSong(){
+    this.router.navigate([]);
   }
 
 }
