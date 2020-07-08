@@ -11,6 +11,8 @@ import {FormsModule} from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { FooterComponent } from './common/footer/footer.component';
 import { SelectComponent } from './select/select.component';
+import { CamComponent } from './cam/cam.component';
+import {WebcamModule} from 'ngx-webcam';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { SelectComponent } from './select/select.component';
     HeaderComponent,
     QuestionComponent,
     FooterComponent,
-    SelectComponent
+    SelectComponent,
+    CamComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    WebcamModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

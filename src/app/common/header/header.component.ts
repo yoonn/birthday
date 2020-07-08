@@ -46,7 +46,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public goCamera(){
-    this.router.navigate([]);
+    this.router.navigate(['cam']);
   }
 
   public goSong(){
