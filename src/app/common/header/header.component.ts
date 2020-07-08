@@ -26,9 +26,9 @@ export class HeaderComponent implements OnInit {
 
   public setSrc() {
     if (this.guest === 'ari') {
-      this.gifSrc = '../../../assets/img/header/face.gif';
+      this.gifSrc = 'assets/img/header/face.gif';
     } else if (this.guest === 'jin') {
-      this.gifSrc = '../../../assets/img/header/face.gif';
+      this.gifSrc = 'assets/img/header/face.gif';
     } else {
       console.log('guest', this.guest);
     }

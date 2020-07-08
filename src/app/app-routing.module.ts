@@ -4,7 +4,7 @@ import { SurveyComponent } from './survey/survey.component';
 import { CompleteComponent } from './complete/complete.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'survey.html', pathMatch: 'full' },
+  { path: '', redirectTo: 'survey', pathMatch: 'full' },
   { path: 'survey/:guest', component: SurveyComponent},
   { path: 'complete/:guest', component: CompleteComponent}
 ];

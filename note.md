@@ -18,3 +18,7 @@
 1. json 사용
     - cookie.set("basket-data", JSON.stringify(data()))
     - JSON.parse(cookie.get("basket-data"))
+
+
+## 배포
+ng deploy --base-href=https://yoonn.github.io/birthday/
