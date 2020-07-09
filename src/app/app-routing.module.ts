@@ -11,8 +11,6 @@ const routes: Routes = [
   { path: 'select', component: SelectComponent},
   { path: 'survey', component: SurveyComponent},
   { path: 'complete', component: CompleteComponent},
-  // { path: 'survey/:guest', component: SurveyComponent},
-  // { path: 'complete/:guest', component: CompleteComponent},
   { path: 'cam', component: CamComponent},
   { path: 'song', component: SongComponent},
 ];

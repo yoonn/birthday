@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
 
 @Component({
@@ -9,22 +9,10 @@ import {CookieService} from 'ngx-cookie-service';
 })
 export class HeaderComponent implements OnInit {
 
-  public paramName = 'guest';
-
   public guest: string;
   public gifSrc: string;
 
   constructor(private cookieService: CookieService, private router: Router) {
-
-    // this.guest = route.snapshot.params[this.paramName];
-    // this.setSrc();
-    //
-    // const param = route.snapshot.params[this.paramName];
-    // if (param === undefined || param === '') {
-    //   this.guest = 'none';
-    // } else {
-    //   this.guest = param;
-    // }
 
     this.guest = this.cookieService.get('bdGuest');
     if (this.guest === undefined) {

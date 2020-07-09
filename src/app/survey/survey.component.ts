@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
 
@@ -8,8 +8,6 @@ import {CookieService} from 'ngx-cookie-service';
   styleUrls: ['./survey.component.scss']
 })
 export class SurveyComponent implements OnInit {
-
-  // public paramName = 'guest';
 
   public guest: string;
   public host: string;
@@ -34,23 +32,6 @@ export class SurveyComponent implements OnInit {
     if (this.cookieService.get('bdData') !== ''){
       this.router.navigate([this.url]);
     }
-
-    // const param = route.snapshot.params[this.paramName];
-    // if (this.isEmptyString(param)) {
-    //   this.guest = 'none';
-    // } else {
-    //   this.guest = param;
-    // }
-    //
-    // console.log(this.guest);
-    //
-    // this.setHost();
-    // this.url = 'complete/' + this.guest;
-    //
-    // console.log('getCookie', this.cookieService.get('bdData'));
-    // if (this.cookieService.get('bdData') !== ''){
-    //   this.router.navigate([this.url]);
-    // }
 
   }
 
@@ -88,7 +69,6 @@ export class SurveyComponent implements OnInit {
 
     const bdData = this.q1.concat(this.q2).concat(this.q3);
 
-    // console.log('bdData', bdData);
     this.cookieService.set('bdData', bdData);
     this.router.navigate([this.url]);
   }

@@ -10,9 +10,7 @@ import { NgxAudioPlayerModule } from 'ngx-audio-player';
 import { AppComponent } from './app.component';
 import { CompleteComponent } from './complete/complete.component';
 import { SurveyComponent } from './survey/survey.component';
-import { HeaderComponent } from './common/header/header.component';
-import { QuestionComponent } from './common/question/question.component';
-import { FooterComponent } from './common/footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 import { SelectComponent } from './select/select.component';
 import { CamComponent } from './cam/cam.component';
 import { SongComponent } from './song/song.component';
@@ -24,8 +22,6 @@ import { SongComponent } from './song/song.component';
     CompleteComponent,
     SurveyComponent,
     HeaderComponent,
-    QuestionComponent,
-    FooterComponent,
     SelectComponent,
     CamComponent,
     SongComponent

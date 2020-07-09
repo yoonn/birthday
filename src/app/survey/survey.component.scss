@@ -6,15 +6,11 @@
 
   .questionTitle{
     width: 100%;
+    padding-bottom: 5px;
 
     span {
-      &:first-child {
-        font-size: 25px;
-        font-weight: bold;
-      }
-      &:last-child {
-        font-size: 20px;
-      }
+      font-size: 20px;
+      font-weight: bold;
     }
   }
   .questionBody{
@@ -27,7 +23,6 @@
       &:last-child { margin-left: 5% }
       &.selected {
         span {
-          //background: #fdd860;
           background: radial-gradient(circle, rgba(253,216,96,1) 80%, rgba(255,255,255,0) 100%);
           border-radius: 10px;
           box-sizing: border-box;
@@ -58,9 +53,9 @@
   padding-top: 20px;
 
   button {
-    border-radius: 30px;
+    border-radius: 15px;
     background: none;
-    border: 10px solid #fdd860;
+    border: 3px solid #fdd860;
     font-size: 20px;
     padding: 3px 20px;
   }

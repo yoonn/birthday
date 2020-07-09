@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
 
 @Component({
@@ -13,7 +13,6 @@ export class SelectComponent implements OnInit {
   public guest: string;
 
   constructor(private cookieService: CookieService, private router: Router) {
-    // this.guest = '';
     this.guest = this.cookieService.get('bdGuest');
     if (this.guest === 'ari') {
       this.guestName = '변아영';
