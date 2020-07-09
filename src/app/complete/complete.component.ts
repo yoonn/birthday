@@ -9,8 +9,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class CompleteComponent implements OnInit {
 
-  // public paramName = 'guest';
-
   public guest: string;
   public host: string;
 
@@ -23,9 +21,6 @@ export class CompleteComponent implements OnInit {
   public url: string;
 
   constructor(private route: ActivatedRoute, private cookieService: CookieService, private router: Router) {
-
-    // this.guest = route.snapshot.params[this.paramName];
-    // this.url = 'survey/' + this.guest;
 
     this.guest = this.cookieService.get('bdGuest');
     if (this.guest === undefined) {
@@ -66,11 +61,7 @@ export class CompleteComponent implements OnInit {
     this.bdData = this.cookieService.get('bdData');
     if (this.bdData === '' ) {
       this.router.navigate([this.url]);
-      console.log(this.bdData);
     }
-    console.log(this.bdData);
-
-    // this.bdData = JSON.parse(this.cookieService.get('bdData'));
   }
 
 }

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {CookieService} from 'ngx-cookie-service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-root',
