@@ -9,14 +9,13 @@
   padding: 50px 0 30px;
   text-align: center;
 
-  div {
+  .imgDiv {
+    display: inline-block;
     .writing {
       width: 130px;
-      display: inline-block;
     }
     .faceGif {
       width: 100px;
-      display: inline-block;
     }
   }
 

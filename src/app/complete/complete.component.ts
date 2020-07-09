@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class CompleteComponent implements OnInit {
 
-  public paramName = 'guest';
+  // public paramName = 'guest';
 
   public guest: string;
   public host: string;
@@ -24,18 +24,24 @@ export class CompleteComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private cookieService: CookieService, private router: Router) {
 
-    this.guest = route.snapshot.params[this.paramName];
-    this.url = 'survey/' + this.guest;
+    // this.guest = route.snapshot.params[this.paramName];
+    // this.url = 'survey/' + this.guest;
 
-    this.getCookie();
-    this.setData(this.bdData);
+    this.guest = this.cookieService.get('bdGuest');
+    if (this.guest === undefined) {
+      this.router.navigate(['select']);
+    }
+    this.url = 'survey';
+
+    this.getBdData();
+    this.setBdData(this.bdData);
     this.setHost();
   }
 
   ngOnInit(): void {
   }
 
-  public setData(bdData) {
+  public setBdData(bdData) {
     this.q1 = bdData[0];
     this.q2 = bdData[1];
     this.q3 = bdData[2];
@@ -47,7 +53,7 @@ export class CompleteComponent implements OnInit {
     } else if (this.guest === 'jin') {
       this.host = '융디니';
     } else {
-      this.host = 'wrong';
+      this.router.navigate(['select']);
     }
   }
 
@@ -56,7 +62,7 @@ export class CompleteComponent implements OnInit {
     this.router.navigate([this.url]);
   }
 
-  public getCookie(){
+  public getBdData(){
     this.bdData = this.cookieService.get('bdData');
     if (this.bdData === '' ) {
       this.router.navigate([this.url]);
