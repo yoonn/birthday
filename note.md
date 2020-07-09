@@ -29,3 +29,9 @@ npmjs.com/package/ngx-webcam
 
 --save는 package.json에 자동 포함되게 하는 기능이었지만 요즘은 그냥 install해도 자동 추가됨
 
+## youtube player > 실패
+npm install @angular/youtube-player
+youtube ifram bug
+
+## audio play
+npm i ngx-audio-player
