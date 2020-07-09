@@ -9,7 +9,7 @@ import {CookieService} from 'ngx-cookie-service';
 })
 export class SurveyComponent implements OnInit {
 
-  public paramName = 'guest';
+  // public paramName = 'guest';
 
   public guest: string;
   public host: string;
@@ -22,22 +22,35 @@ export class SurveyComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private cookieService: CookieService, private router: Router) {
 
-    const param = route.snapshot.params[this.paramName];
-    if (this.isEmptyString(param)) {
-      this.guest = 'none';
-    } else {
-      this.guest = param;
+    this.guest = this.cookieService.get('bdGuest');
+    if (this.guest === undefined) {
+      this.router.navigate(['select']);
     }
 
-    console.log(this.guest);
-
     this.setHost();
-    this.url = 'complete/' + this.guest;
+    this.url = 'complete';
 
     console.log('getCookie', this.cookieService.get('bdData'));
     if (this.cookieService.get('bdData') !== ''){
       this.router.navigate([this.url]);
     }
+
+    // const param = route.snapshot.params[this.paramName];
+    // if (this.isEmptyString(param)) {
+    //   this.guest = 'none';
+    // } else {
+    //   this.guest = param;
+    // }
+    //
+    // console.log(this.guest);
+    //
+    // this.setHost();
+    // this.url = 'complete/' + this.guest;
+    //
+    // console.log('getCookie', this.cookieService.get('bdData'));
+    // if (this.cookieService.get('bdData') !== ''){
+    //   this.router.navigate([this.url]);
+    // }
 
   }
 

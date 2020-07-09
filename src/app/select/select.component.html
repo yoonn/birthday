@@ -1,3 +1,11 @@
 <app-header></app-header>
 
-<p>select works!</p>
+<div class="selectDiv">
+  <div class="inputDiv">
+    <span>이름 : </span>
+    <input type="text" [(ngModel)]="guestName"/>
+  </div>
+  <div class="btnDiv">
+    <button type="button" (click)="setGuest();">😗 시 작 😗</button>
+  </div>
+</div>

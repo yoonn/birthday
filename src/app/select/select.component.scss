@@ -1,0 +1,29 @@
+
+.selectDiv {
+  padding: 50px 0 60px;
+  text-align: center;
+}
+
+.inputDiv{
+  span {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  input {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
+}
+
+.btnDiv {
+  padding-top: 30px;
+  button {
+    border-radius: 15px;
+    background: none;
+    border: 3px solid #fdd860;
+    font-size: 20px;
+    padding: 3px 20px;
+  }
+}
+

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Subject, Observable} from 'rxjs';
 import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
+import {CookieService} from 'ngx-cookie-service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cam',
@@ -8,6 +10,8 @@ import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
   styleUrls: ['./cam.component.scss']
 })
 export class CamComponent implements OnInit {
+
+  public guest: string;
 
   public showWebcam = true;
   public allowCameraSwitch = true;
@@ -27,7 +31,12 @@ export class CamComponent implements OnInit {
   // switch to next / previous / specific webcam; true/false: forward/backwards, string: deviceId
   private nextWebcam: Subject<boolean|string> = new Subject<boolean|string>();
 
-  constructor() { }
+  constructor(private cookieService: CookieService, private router: Router) {
+    this.guest = this.cookieService.get('bdGuest');
+    if (this.guest === undefined) {
+      this.router.navigate(['select']);
+    }
+  }
 
   ngOnInit(): void {
     WebcamUtil.getAvailableVideoInputs()

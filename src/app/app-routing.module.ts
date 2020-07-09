@@ -9,8 +9,10 @@ import { SongComponent } from './song/song.component';
 const routes: Routes = [
   { path: '', redirectTo: 'select', pathMatch: 'full' },
   { path: 'select', component: SelectComponent},
-  { path: 'survey/:guest', component: SurveyComponent},
-  { path: 'complete/:guest', component: CompleteComponent},
+  { path: 'survey', component: SurveyComponent},
+  { path: 'complete', component: CompleteComponent},
+  // { path: 'survey/:guest', component: SurveyComponent},
+  // { path: 'complete/:guest', component: CompleteComponent},
   { path: 'cam', component: CamComponent},
   { path: 'song', component: SongComponent},
 ];
