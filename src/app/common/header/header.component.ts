@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public goSong(){
-    this.router.navigate([]);
+    this.router.navigate(['song']);
   }
 
 }
