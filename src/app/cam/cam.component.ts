@@ -3,15 +3,22 @@ import {Subject, Observable} from 'rxjs';
 import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
 import {CookieService} from 'ngx-cookie-service';
 import {Router} from '@angular/router';
+import { DatePipe } from '@angular/common';
+
+declare const Kakao: any; // kakao.js에서 사용
 
 @Component({
   selector: 'app-cam',
   templateUrl: './cam.component.html',
-  styleUrls: ['./cam.component.scss']
+  styleUrls: ['./cam.component.scss'],
+  providers: [DatePipe]
 })
 export class CamComponent implements OnInit {
 
+  private KAKAO_JAVASCRIPT_API_KEY = 'e6497dec73871c668e6be70741bed752';
+
   public guest: string;
+  public today: string;
 
   public showWebcam = true;
   public allowCameraSwitch = true;
@@ -31,11 +38,12 @@ export class CamComponent implements OnInit {
   // switch to next / previous / specific webcam; true/false: forward/backwards, string: deviceId
   private nextWebcam: Subject<boolean|string> = new Subject<boolean|string>();
 
-  constructor(private cookieService: CookieService, private router: Router) {
+  constructor(private cookieService: CookieService, private router: Router, private datePipe: DatePipe) {
     this.guest = this.cookieService.get('bdGuest');
     if (this.guest === undefined) {
       this.router.navigate(['select']);
     }
+    this.today = this.datePipe.transform(this.today, 'yyyy-MM-dd');
   }
 
   ngOnInit(): void {
@@ -43,6 +51,7 @@ export class CamComponent implements OnInit {
       .then((mediaDevices: MediaDeviceInfo[]) => {
         this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
       });
+    Kakao.init(this.KAKAO_JAVASCRIPT_API_KEY);
   }
 
   public triggerSnapshot(): void {
@@ -73,6 +82,30 @@ export class CamComponent implements OnInit {
 
   public retryWebcam() {
     this.webcamImage = null;
+  }
+
+  public sendImageKakao() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '🌟HBD🌟',
+        description: this.today,
+        imageUrl: this.webcamImage.imageAsDataUrl,
+        link: {
+          mobileWebUrl: this.webcamImage.imageAsDataUrl,
+          webUrl: this.webcamImage.imageAsDataUrl,
+        },
+      },
+      buttons: [
+        {
+          title: 'ㄱㄱ 😊',
+          link: {
+            mobileWebUrl: this.webcamImage.imageAsDataUrl,
+            webUrl: this.webcamImage.imageAsDataUrl,
+          },
+        }
+      ]
+    });
   }
 
 }
