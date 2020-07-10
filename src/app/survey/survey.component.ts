@@ -16,8 +16,6 @@ export class SurveyComponent implements OnInit {
   public q2: string;
   public q3: string;
 
-  public url: string;
-
   constructor(private route: ActivatedRoute, private cookieService: CookieService, private router: Router) {
 
     this.guest = this.cookieService.get('bdGuest');
@@ -26,11 +24,10 @@ export class SurveyComponent implements OnInit {
     }
 
     this.setHost();
-    this.url = 'complete';
 
     console.log('getCookie', this.cookieService.get('bdData'));
     if (this.cookieService.get('bdData') !== ''){
-      this.router.navigate([this.url]);
+      this.router.navigate(['select']);
     }
 
   }
@@ -44,7 +41,7 @@ export class SurveyComponent implements OnInit {
     } else if (this.guest === 'jin') {
       this.host = '융디니';
     } else {
-      this.host = 'wrong';
+      this.router.navigate(['select']);
     }
   }
 
@@ -70,7 +67,7 @@ export class SurveyComponent implements OnInit {
     const bdData = this.q1.concat(this.q2).concat(this.q3);
 
     this.cookieService.set('bdData', bdData);
-    this.router.navigate([this.url]);
+    this.router.navigate(['complete']);
   }
 
   /*
