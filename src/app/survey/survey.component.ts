@@ -27,7 +27,7 @@ export class SurveyComponent implements OnInit {
 
     console.log('getCookie', this.cookieService.get('bdData'));
     if (this.cookieService.get('bdData') !== ''){
-      this.router.navigate(['select']);
+      this.router.navigate(['complete']);
     }
 
   }
