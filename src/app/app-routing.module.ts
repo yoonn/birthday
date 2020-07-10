@@ -5,6 +5,7 @@ import { CompleteComponent } from './complete/complete.component';
 import { SelectComponent } from './select/select.component';
 import { CamComponent } from './cam/cam.component';
 import { SongComponent } from './song/song.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'select', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'complete', component: CompleteComponent},
   { path: 'cam', component: CamComponent},
   { path: 'song', component: SongComponent},
+  { path: 'admin', component: AdminComponent},
 ];
 
 @NgModule({
