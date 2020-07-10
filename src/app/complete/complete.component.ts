@@ -118,8 +118,8 @@ export class CompleteComponent implements OnInit {
       objectType: 'text',
       text: message,
       link: {
-        mobileWebUrl: 'https://yoonn.github.io/birthday/',
-        webUrl: 'https://yoonn.github.io/birthday/',
+        mobileWebUrl: 'https://yoonn.github.io/birthday/complete',
+        webUrl: 'https://yoonn.github.io/birthday/complete',
       },
     });
   }
