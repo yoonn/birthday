@@ -27,7 +27,6 @@
       &:last-child { margin-left: 5% }
       &.selected {
         span {
-          //background: #fdd860;
           background: radial-gradient(circle, rgba(253,216,96,1) 80%, rgba(255,255,255,0) 100%);
           border-radius: 10px;
           box-sizing: border-box;
@@ -56,6 +55,7 @@
 .btnDiv {
   text-align: center;
   padding-top: 20px;
+  padding-bottom: 50px;
 
   button {
     border-radius: 15px;

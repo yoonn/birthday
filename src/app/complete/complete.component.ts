@@ -36,8 +36,8 @@ export class CompleteComponent implements OnInit {
     this.url = 'survey';
 
     this.getBdData();
-    this.setBdDataString();
     this.setBdData(this.bdData);
+    this.setBdDataString();
     this.setHost();
   }
 
@@ -120,38 +120,6 @@ export class CompleteComponent implements OnInit {
         mobileWebUrl: 'https://yoonn.github.io/birthday/',
         webUrl: 'https://yoonn.github.io/birthday/',
       },
-    });
-  }
-
-  public sendInviteKakao() {
-    let description = '';
-    if (this.guest === 'ari') {
-      description = '변아영';
-    } else if (this.guest === 'jin') {
-      description = '김지냔';
-    }
-
-    Kakao.Link.sendDefault({
-      objectType: 'feed',
-      content: {
-        title: '🌟HBD🌟',
-        description: description + ' 생축🥳',
-        imageUrl:
-          'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-        link: {
-          mobileWebUrl: 'https://yoonn.github.io/birthday/',
-          webUrl: 'https://yoonn.github.io/birthday/',
-        },
-      },
-      buttons: [
-        {
-          title: 'ㄱㄱ 😊',
-          link: {
-            mobileWebUrl: 'https://yoonn.github.io/birthday/',
-            webUrl: 'https://yoonn.github.io/birthday/',
-          },
-        }
-      ]
     });
   }
 

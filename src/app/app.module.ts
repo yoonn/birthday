@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { SelectComponent } from './select/select.component';
 import { CamComponent } from './cam/cam.component';
 import { SongComponent } from './song/song.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SongComponent } from './song/song.component';
     HeaderComponent,
     SelectComponent,
     CamComponent,
-    SongComponent
+    SongComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
