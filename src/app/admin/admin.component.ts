@@ -35,8 +35,7 @@ export class AdminComponent implements OnInit {
       content: {
         title: '🌟HBD🌟',
         description: this.description,
-        imageUrl:
-          'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+        imageUrl: 'assets/img/invite.jpg',
         link: {
           mobileWebUrl: 'https://yoonn.github.io/birthday/',
           webUrl: 'https://yoonn.github.io/birthday/',

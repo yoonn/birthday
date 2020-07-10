@@ -53,11 +53,11 @@ export class CompleteComponent implements OnInit {
 
   public setBdDataString(){
     if (this.q1 === '1') {
-      this.q1String = '돈 들어간 초코케익';
+      this.q1String = '초코케익';
     } else if (this.q1 === '2') {
-      this.q1String = '핸드메이드 랜덤케익';
+      this.q1String = '랜덤케익';
     } else if (this.q1 === '3') {
-      this.q1String = '돈 들어간 생크림케익';
+      this.q1String = '생크림케익';
     }
     if (this.q2 === '1') {
       this.q2String = '현금';
