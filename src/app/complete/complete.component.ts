@@ -104,14 +104,15 @@ export class CompleteComponent implements OnInit {
         '🎂 ' + this.q3String + '요일에\n' +
         '🎁 ' + this.q1String + '와\n' +
         '🎉 ' + this.q2String + ' 갖고\n\n' +
-        '만나욥🕺';
+        '만나욥🕺\n\n';
     } else if (this.guest === 'jin') {
       message = '김삼십+2살 김지냔 🐷\n\n' +
         '🎂 ' + this.q3String + '요일에\n' +
         '🎁 ' + this.q1String + '와\n' +
         '🎉 ' + this.q2String + ' 갖고\n\n' +
-        '만나욥🕺';
+        '만나욥🕺\n\n';
     }
+    message += '(나한테는 안오니까 공유해주기✨)';
 
     Kakao.Link.sendDefault({
       objectType: 'text',
