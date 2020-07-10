@@ -1,7 +1,7 @@
 <div class="bdHeader">
   <div class="imgDiv">
-    <img class="writing" src="../../assets/img/header/happybd.png" alt="hbd">
-    <img class="faceGif" [src]="gifSrc" alt="faceGif" *ngIf="guest != 'none'"/>
+    <img class="writing" src="assets/img/header/happybd.png">
+    <img class="faceGif" [src]="gifSrc" *ngIf="guest != undefined"/>
   </div>
   <div class="menu">
     <button type="button" (click)="goQuestion()">계획</button>

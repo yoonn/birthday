@@ -38,4 +38,8 @@ export class SelectComponent implements OnInit {
     }
   }
 
+  public removeGuest() {
+    this.cookieService.delete('bdGuest');
+  }
+
 }
