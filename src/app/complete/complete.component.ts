@@ -36,6 +36,7 @@ export class CompleteComponent implements OnInit {
     this.url = 'survey';
 
     this.getBdData();
+    this.setBdDataString();
     this.setBdData(this.bdData);
     this.setHost();
   }
@@ -99,16 +100,16 @@ export class CompleteComponent implements OnInit {
   public sendCompleteKakao() {
     let message = '';
     if (this.guest === 'ari') {
-      message = '곧 계란한판 되는 영자\n' +
-        this.q3String + '요일에\n' +
-        this.q1String + '와\n' +
-        this.q2String + ' 갖고\n' +
+      message = '곧 계란한판 되는 영자 🐣\n\n' +
+        '🎂 ' + this.q3String + '요일에\n' +
+        '🎁 ' + this.q1String + '와\n' +
+        '🎉 ' + this.q2String + ' 갖고\n\n' +
         '만나욥🕺';
     } else if (this.guest === 'jin') {
-      message = '김삼십+2살 김지냔\n' +
-        this.q3String + '요일에\n' +
-        this.q1String + '와\n' +
-        this.q2String + ' 갖고\n' +
+      message = '김삼십+2살 김지냔 🐷\n\n' +
+        '🎂 ' + this.q3String + '요일에\n' +
+        '🎁 ' + this.q1String + '와\n' +
+        '🎉 ' + this.q2String + ' 갖고\n\n' +
         '만나욥🕺';
     }
 
