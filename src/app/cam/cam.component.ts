@@ -15,7 +15,7 @@ declare const Kakao: any; // kakao.js에서 사용
 })
 export class CamComponent implements OnInit {
 
-  private KAKAO_JAVASCRIPT_API_KEY = 'e6497dec73871c668e6be70741bed752';
+  // private KAKAO_JAVASCRIPT_API_KEY = 'e6497dec73871c668e6be70741bed752';
 
   public guest: string;
   public today: string;
@@ -52,7 +52,7 @@ export class CamComponent implements OnInit {
       .then((mediaDevices: MediaDeviceInfo[]) => {
         this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
       });
-    Kakao.init(this.KAKAO_JAVASCRIPT_API_KEY);
+    // Kakao.init(this.KAKAO_JAVASCRIPT_API_KEY);
   }
 
   public triggerSnapshot(): void {

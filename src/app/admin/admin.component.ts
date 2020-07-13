@@ -10,7 +10,7 @@ declare const Kakao: any; // kakao.js에서 사용
 })
 export class AdminComponent implements OnInit {
 
-  private KAKAO_JAVASCRIPT_API_KEY = 'e6497dec73871c668e6be70741bed752';
+  // private KAKAO_JAVASCRIPT_API_KEY = 'e6497dec73871c668e6be70741bed752';
   public description: string;
 
   constructor(private cookieService: CookieService) {
@@ -18,7 +18,7 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    Kakao.init(this.KAKAO_JAVASCRIPT_API_KEY);
+    // Kakao.init(this.KAKAO_JAVASCRIPT_API_KEY);
   }
 
   public removeGuest() {
