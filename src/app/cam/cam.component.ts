@@ -19,6 +19,7 @@ export class CamComponent implements OnInit {
 
   public guest: string;
   public today: string;
+  public date = new Date();
 
   public showWebcam = true;
   public allowCameraSwitch = true;
@@ -43,7 +44,7 @@ export class CamComponent implements OnInit {
     if (this.guest === undefined) {
       this.router.navigate(['select']);
     }
-    this.today = this.datePipe.transform(this.today, 'yyyy-MM-dd');
+    this.today = this.datePipe.transform(this.date, 'yyyy-MM-dd');
   }
 
   ngOnInit(): void {
